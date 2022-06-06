@@ -55,11 +55,13 @@ app.use(function(req, res, next){
 
 // Importing routes
 const indexRouter = require('./routes/index');
+const wineRouter = require('./routes/wines');
 
 const authRouter = require('./routes/auth');
 
 // Mounting routes
 app.use('/', indexRouter);
+app.use('/', wineRouter);
 
 app.use('/', authRouter);
 
