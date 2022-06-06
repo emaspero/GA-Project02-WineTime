@@ -7,10 +7,10 @@ const reviewSchema = mongoose.Schema({
     },
     comment: String,
     rating: Number,
-    wine: {
+    wine: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Wine'
-    }},
+    }]},
     {
         timestamps: true
     });
