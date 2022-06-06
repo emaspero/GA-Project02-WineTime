@@ -56,13 +56,13 @@ app.use(function(req, res, next){
 // Importing routes
 const indexRouter = require('./routes/index');
 const wineRouter = require('./routes/wines');
-
+const reviewRouter = require('./routes/reviews');
 const authRouter = require('./routes/auth');
 
 // Mounting routes
 app.use('/', indexRouter);
 app.use('/', wineRouter);
-
+app.use('/', reviewRouter);
 app.use('/', authRouter);
 
 // Listen to port with callback fxn
