@@ -14,5 +14,7 @@ const wineCtrl = require('../controllers/wine');
 
 router.get('/wine/add', wineCtrl.wine_create_get);
 router.post('/wine/add', wineCtrl.wine_create_post);
+router.get('/wine/index', wineCtrl.wine_index_get);
+router.get('/wine/detail', wineCtrl.wine_show_get);
 
 module.exports = router;
