@@ -16,5 +16,8 @@ router.get('/wine/add', wineCtrl.wine_create_get);
 router.post('/wine/add', wineCtrl.wine_create_post);
 router.get('/wine/index', wineCtrl.wine_index_get);
 router.get('/wine/detail', wineCtrl.wine_show_get);
+router.get('/wine/delete', wineCtrl.wine_delete_get);
+router.get('/wine/edit', wineCtrl.wine_edit_get);
+router.put('/wine/update', wineCtrl.wine_update_put);
 
 module.exports = router;
