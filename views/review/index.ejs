@@ -2,15 +2,13 @@
 <table>
     <tr>
         <th>Wine</th>
-        <th>Username</th>
         <th>Comment</th>
         <th>Rating</th>
     </tr>
 
     <% reviews.forEach(function(review) { %>
         <tr>
-            <td><%= wine.name %></td>
-            <td><%= user.username %></td>
+            <td>Wine Name</td>
             <td><%= review.comment %></td>
             <td><%= review.rating %></td>
         </tr>
