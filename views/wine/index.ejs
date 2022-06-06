@@ -6,12 +6,8 @@
         <th>Grape</th>
         <th>Region</th>
         <th>Country</th>
-        <th>Rating</th>
         <th> Created At </th>
         <th> Updated At </th>
-        <!-- Edit/Delete will show only if logged in? -->
-        <th> Edit </th>
-        <th> Delete </th>
     </tr>
 
     <% wines.forEach(function(wine) { %>
@@ -21,12 +17,8 @@
             <td><%= wine.grape %></td>
             <td><%= wine.region %></td>
             <td><%= wine.country %></td>
-            <td><%= wine.rating %></td>
             <td><%= moment(wine.createdAt).fromNow() %></td>
             <td><%= moment(wine.updatedAt).fromNow() %></td>
-            <!-- Edit/Delete will show only if logged in? -->
-            <td>Edit</td>
-            <td>Delete</td>
         </tr>
 
     <% }) %>

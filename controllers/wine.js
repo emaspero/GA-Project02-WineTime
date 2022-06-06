@@ -47,3 +47,39 @@ exports.wine_show_get = (req, res) => {
         console.log(err);
     })
 };
+
+// GET - Delete
+exports.wine_delete_get = (req, res) => {
+    console.log(req.query.id);
+    
+    Wine.findByIdAndDelete(req,query.id)
+    .then(() => {
+        res.redirect('/wine/index');
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+};
+
+// GET - Load Wine edit form
+exports.wine_edit_get = (req, res) => {
+    Wine.findById(req.query.id)
+    .then((wine) => {
+        res.render('wine/edit', {wine})
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+};
+// PUT - Wine update
+exports.wine_update_put = (req, res) => {
+    console.log(req.body.id);
+
+    Wine.findByIdAndUpdate(req.body.id, req.body)
+    .then(() => {
+        res.redirect('/wine/index');
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+};
