@@ -7,7 +7,14 @@ const moment = require('moment');
 
 // GET - Load 'Add Review' form
 exports.review_create_get = (req, res) => {
-    res.render('review/add');
+    Wine.find()
+    .then((wines => {
+    res.render('review/add', {wines})
+    }))
+    .catch((err) => {
+        console.log(err);
+        res.send("Try again later");
+    })
 };
 // POST - Save the data into the database
 exports.review_create_post = (req, res) => {
@@ -17,6 +24,12 @@ exports.review_create_post = (req, res) => {
 
     review.save()
     .then(() => {
+        req.body.wine.forEach(wine => {
+            Wine.findById(wine, (error, wine) => {
+                wine.review.push(review);
+                wine.save();
+            })
+        })
         res.redirect('/review/index');
     })
     .catch((err) => {
