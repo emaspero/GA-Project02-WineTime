@@ -55,9 +55,11 @@ app.use(function(req, res, next){
 
 // Importing routes
 const indexRouter = require('./routes/index');
+const wineRouter = require('./routes/wines');
 
 // Mounting routes
 app.use('/', indexRouter);
+app.use('/', wineRouter);
 
 // Listen to port with callback fxn
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
