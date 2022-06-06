@@ -4,7 +4,11 @@ const wineSchema = mongoose.Schema({
     name: String,
     grape: String,
     region: String,
-    country: String
+    country: String,
+    review: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Review'
+    }]
 },
 {
     timestamps: true
