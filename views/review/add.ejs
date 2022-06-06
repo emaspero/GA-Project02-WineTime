@@ -5,7 +5,7 @@
         <label>Wine:</label>
         <select name="wine[]">
             <% wines.forEach(function(wine) { %>
-                <option value="<%= wine._id %>"><%= wine.name %></option>
+                <option value="<%=wine._id%>"><%= wine.name %></option>
            <% }) %>
         </select>
     </div>

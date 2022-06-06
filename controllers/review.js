@@ -26,6 +26,7 @@ exports.review_create_post = (req, res) => {
     .then(() => {
         req.body.wine.forEach(wine => {
             Wine.findById(wine, (error, wine) => {
+                // console.log(wine)
                 wine.review.push(review);
                 wine.save();
             })
