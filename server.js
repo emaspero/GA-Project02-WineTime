@@ -40,8 +40,8 @@ app.use(session({
 }))
 
 // Initialise session and passport
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Initalise flash to display messages to the user
 app.use(flash());
