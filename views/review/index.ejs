@@ -8,7 +8,11 @@
 
     <% reviews.forEach(function(review) { %>
         <tr>
-            <td>Wine Name</td>
+            <td>
+                <% review.wine.forEach(function(wine) { %>
+                    <%= wine.name %>
+                <% }) %>
+            </td>
             <td><%= review.comment %></td>
             <td><%= review.rating %></td>
         </tr>
