@@ -55,9 +55,11 @@ app.use(function(req, res, next){
 
 // Importing routes
 const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth');
 
 // Mounting routes
 app.use('/', indexRouter);
+app.use('/', authRouter);
 
 // Listen to port with callback fxn
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
