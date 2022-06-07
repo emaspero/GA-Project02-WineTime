@@ -24,7 +24,7 @@ exports.review_create_post = (req, res) => {
     console.log(req.body);
 
     let review = new Review(req.body);
-    // let user = req.user
+    let user = User(req.user);
     console.log(req.user)
     console.log(review)
     review.save()
@@ -34,10 +34,11 @@ exports.review_create_post = (req, res) => {
                 // console.log(wine)
                 wine.review.push(review);
                 new_review.user.push(req.user);
+                user.review.push(review);
                 // user.new_review.push(review)
                 new_review.save();
                 wine.save();
-                // user.save();
+                user.save();
             })
         // })
         res.redirect('/review/index');
