@@ -1,0 +1,39 @@
+<h1>Profile</h1>
+
+<table>
+    <tr>
+        <td>First Name:</td>
+        <td> <%= currentUser.firstName %> </td>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td> <%= currentUser.lastName %> </td>
+    </tr>
+    <tr>
+        <td>Email Address:</td>
+        <td> <%= currentUser.emailAddress %> </td>
+    </tr>
+    <tr>
+        <td>Username:</td>
+        <td> <%= currentUser.username %> </td>
+    </tr>
+    <tr>
+        <td>Password:</td>
+        <td> <%= currentUser.password %> </td>
+    </tr>
+</table>
+
+<h2>Reviews:</h2>
+
+<% user[0].review.forEach(function(review) { %>
+    <div> 
+
+        <div> Rating: <%= review.rating %>/5</div> 
+        <div>
+            <%= review.comment %>
+        </div> 
+    </div>
+    <% }) %>
+
+
+
