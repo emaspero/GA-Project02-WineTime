@@ -3,7 +3,8 @@ const express = require('express');
 
 var methodOverride = require('method-override');
 const router = express.Router();
-// Require isLoggedIn here
+// Require isLoggedIn 
+const isLoggedIn = require('../helper/isLoggedIn');
 
 // Initialize method-override
 router.use(methodOverride('_method'));
@@ -12,7 +13,7 @@ router.use(express.urlencoded({extended: true}));
 
 const reviewCtrl = require('../controllers/review');
 
-router.get('/review/add', reviewCtrl.review_create_get);
+router.get('/review/add', isLoggedIn, reviewCtrl.review_create_get);
 router.post('/review/add', reviewCtrl.review_create_post);
 router.get('/review/index', reviewCtrl.review_index_get);
 router.get('/review/detail', reviewCtrl.review_show_get);

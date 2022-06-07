@@ -13,23 +13,40 @@
    </div>
    
     <nav>
-        <a href="/wine/index"> Wines </a>
-        <a href="/review/index"> Reviews </a>
-        <!-- Sign up/log in only appears when NOT a current user -->
-        <a href="/auth/signup"> Sign Up </a>
-        <a href="/auth/signin"> Log In </a>
+       
         <!-- Log out only appears when a current user -->
-        <a href="/auth/logout"> Log Out </a>
         <% if (currentUser) { %>
-            Hi! <%= currentUser.firstName %>
+            
+            <div> 
+                <a href="/wine/index"> Wines </a>
+                <a href="/review/index"> Reviews </a>
+            </div>
+            <div>
+                Hi! <%= currentUser.firstName %>
+                <a href="/auth/logout"> Log Out </a> </div>
+        
+      
+            <% } else { %>
+                <div>
+                    <a href="/wine/index"> Wines </a>
+                    <a href="/review/index"> Reviews </a>
+                </div>
+               <div>
+                <a href="/auth/signup"> Sign Up </a>
+                <a href="/auth/signin"> Log In </a>
+               </div>
+                
         <% } %>
     </nav>
+    <% if (currentUser) { %>
 
-    <div> 
-        <a href="/wine/add"> Add Wine </a>
-        <a href="/review/add"> Add Review </a>
-    </div> 
-   
+        <br>
+        <div> 
+            <a href="/wine/add"> Add Wine </a>
+            <a href="/review/add"> Add Review </a>
+        </div> 
+
+        <% } %>
 
     <hr>
 
