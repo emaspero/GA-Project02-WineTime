@@ -3,3 +3,13 @@
 <div>Grape: <%= wine.grape %></div>
 <div>Region: <%= wine.region %></div>
 <div>Country: <%= wine.country %></div>
+
+<div> 
+
+    <% wine.review.forEach(function(review) { %>
+       <hr>
+        <div> Rating: <%= review.rating %> </div>
+        <div> <%= review.comment %> </div>
+    <% }) %>
+
+</div>

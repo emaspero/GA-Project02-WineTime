@@ -1,6 +1,7 @@
 // Import Review & Wine from model
 const {Review} = require('../models/Review');
 const {Wine} = require('../models/Wine');
+const {User} = require('../models/User');
 
 // Require Moment and isLoggedIn below
 const moment = require('moment');
@@ -41,7 +42,7 @@ exports.review_create_post = (req, res) => {
 
 // GET - Review Index
 exports.review_index_get = (req, res) => {
-    Review.find().populate('wine')
+    Review.find().populate(['user', 'wine'])
     .then(reviews => {
         res.render('review/index', {reviews, moment})
     })

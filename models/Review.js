@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const reviewSchema = mongoose.Schema({
-    username: {
+    user: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
-    },
+    }],
     comment: String,
     rating: Number,
     wine: [{

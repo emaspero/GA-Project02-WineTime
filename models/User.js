@@ -34,7 +34,11 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
         minlength: [8, "Invalid password. Must be at least 8 characters."]
-    }
+    },
+    review: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Review"
+    }]
 },
 {
     timestamps: true
@@ -47,4 +51,4 @@ userSchema.methods.verifyPassword = function(password) {
 
 const User = mongoose.model("User", userSchema);
 
-module.exports = User;
+module.exports = {User};

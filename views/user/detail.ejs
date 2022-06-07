@@ -6,8 +6,16 @@
     <div> Member since: <%= moment(user.createdAt).fromNow() %></div>
     <div> Last review added: <%= moment(user.updatedAt).fromNow() %></div>
     
-    <% reviews.forEach(function(review) { %>
-        
+    <% user.review.forEach(function(review) { %>
+        <div> 
+            <% review.wine.forEach(function(wine) { %>
+            <h4> <%= wine.name %> </h4>
+            <% }) %>
+            <div> Rating: <%= review.rating %>/5</div> 
+            <div>
+                <%= review.comment %>
+            </div> 
+        </div>
     <% }) %>
 
 </div>

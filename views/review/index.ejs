@@ -4,6 +4,7 @@
         <th>Wine</th>
         <th>Comment</th>
         <th>Rating</th>
+        <th>Username</th>
     </tr>
 
     <% reviews.forEach(function(review) { %>
@@ -15,6 +16,13 @@
             </td>
             <td><%= review.comment %></td>
             <td><%= review.rating %></td>
+            <td>
+                <% review.user.forEach(function(user){ %>
+                    <%= user.username %>
+               
+               <% }) %>
+            </td> 
+    
         </tr>
     <% }) %>
 </table>

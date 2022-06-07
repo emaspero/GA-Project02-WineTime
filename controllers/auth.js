@@ -1,7 +1,7 @@
 //  APIs for user registration and authentication
 
 // Import User model
-const User = require('../models/User');
+const {User} = require('../models/User');
 
 // Import bcrypt
 const bcrypt = require('bcrypt');

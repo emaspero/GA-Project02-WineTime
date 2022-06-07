@@ -39,7 +39,7 @@ exports.wine_index_get = (req, res) => {
 exports.wine_show_get = (req, res) => {
     console.log(req.query.id);
 
-    Wine.findById(req.query.id)
+    Wine.findById(req.query.id).populate('review')
     .then(wine => {
         res.render('wine/detail', {wine, moment});
     })
