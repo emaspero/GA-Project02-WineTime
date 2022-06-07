@@ -31,14 +31,28 @@ exports.review_create_post = (req, res) => {
     .then((new_review) => {
         // req.body.wine.forEach(wine => {
             Wine.findById(req.body.wine, (error, wine) => {
-                // console.log(wine)
                 wine.review.push(review);
                 new_review.user.push(req.user);
                 user.review.push(review);
-                // user.new_review.push(review)
-                new_review.save();
-                wine.save();
-                user.save();
+
+                // new_review.save()
+                // .then()
+                // .catch()
+                // wine.save()
+                // user.save()
+
+                new_review.save()
+                .then(() => {
+                    wine.save()
+                    .then(() => {
+                        user.save()
+                        .then()
+                        .catch()
+                    })
+                    .catch()
+                })
+                .catch()
+
             })
         // })
         res.redirect('/review/index');
