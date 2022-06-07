@@ -4,6 +4,8 @@
         <th>Wine</th>
         <th>Comment</th>
         <th>Rating</th>
+        <th>Edit</th>
+
         <th>Username</th>
     </tr>
 
@@ -16,13 +18,14 @@
             </td>
             <td><%= review.comment %></td>
             <td><%= review.rating %></td>
+            <td><a href="/review/edit?id=<%= review._id %>">Edit</a></td>
             <td>
                 <% review.user.forEach(function(user){ %>
                    <a href="/user/detail?id=<%= user._id %>"> <%= user.username %> </a>
                
                <% }) %>
             </td> 
-    
+            
         </tr>
     <% }) %>
 </table>

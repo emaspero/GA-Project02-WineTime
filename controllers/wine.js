@@ -7,6 +7,8 @@ const moment = require('moment');
 // GET - Load 'Add Wine' form
 exports.wine_create_get = (req, res) => {
     res.render('wine/add');
+    console.log(req.body);
+
 };
 // POST - Save the data into the database
 exports.wine_create_post = (req, res) => {
@@ -66,6 +68,8 @@ exports.wine_edit_get = (req, res) => {
     Wine.findById(req.query.id)
     .then((wine) => {
         res.render('wine/edit', {wine})
+        console.log(req.body.id);
+        console.log(req.body);
     })
     .catch((err) => {
         console.log(err);
