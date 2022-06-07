@@ -8,6 +8,7 @@
         <th>Country</th>
         <th> Created At </th>
         <th> Updated At </th>
+        <th>Edit</th>
     </tr>
 
     <% wines.forEach(function(wine) { %>
@@ -19,6 +20,7 @@
             <td><%= wine.country %></td>
             <td><%= moment(wine.createdAt).fromNow() %></td>
             <td><%= moment(wine.updatedAt).fromNow() %></td>
+            <td><a href="/wine/edit?id=<%= wine._id %>">Edit</a></td>
         </tr>
 
     <% }) %>

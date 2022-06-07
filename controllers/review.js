@@ -16,6 +16,8 @@ exports.review_create_get = (req, res) => {
         console.log(err);
         res.send("Try again later");
     })
+    console.log(req.body);
+
 };
 // POST - Save the data into the database
 exports.review_create_post = (req, res) => {
