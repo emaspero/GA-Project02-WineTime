@@ -22,16 +22,18 @@ exports.review_create_post = (req, res) => {
     console.log(req.body);
 
     let review = new Review(req.body);
-
+    console.log(req.user)
     review.save()
-    .then(() => {
-        req.body.wine.forEach(wine => {
-            Wine.findById(wine, (error, wine) => {
+    .then((new_review) => {
+        // req.body.wine.forEach(wine => {
+            Wine.findById(req.body.wine, (error, wine) => {
                 // console.log(wine)
                 wine.review.push(review);
+                new_review.user.push(req.user);
+                new_review.save();
                 wine.save();
             })
-        })
+        // })
         res.redirect('/review/index');
     })
     .catch((err) => {

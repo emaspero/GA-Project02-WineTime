@@ -20,7 +20,9 @@
         <a href="/auth/signin"> Log In </a>
         <!-- Log out only appears when a current user -->
         <a href="/auth/logout"> Log Out </a>
-
+        <% if (currentUser) { %>
+            Hi! <%= currentUser.firstName %>
+        <% } %>
     </nav>
 
     <div> 

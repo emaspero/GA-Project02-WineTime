@@ -3,7 +3,7 @@
 <form method="POST" action="/review/add">
     <div>
         <label>Wine:</label>
-        <select name="wine[]">
+        <select name="wine">
             <% wines.forEach(function(wine) { %>
                 <option value="<%=wine._id%>"><%= wine.name %></option>
            <% }) %>
