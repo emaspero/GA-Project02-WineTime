@@ -22,9 +22,9 @@ exports.review_create_get = (req, res) => {
 // POST - Save the data into the database
 exports.review_create_post = (req, res) => {
     let review = new Review(req.body);
-    // let user = req.user
-
-
+    let user = User(req.user);
+    console.log(req.user)
+    console.log(review)
     review.save()
     .then((new_review) => {
         // req.body.wine.forEach(wine => {
@@ -32,13 +32,11 @@ exports.review_create_post = (req, res) => {
                 console.log(new_review)
                 wine.review.push(review);
                 new_review.user.push(req.user);
-                // user.review.push(review)
-
-
+                user.review.push(review);
+                // user.new_review.push(review)
                 new_review.save();
                 wine.save();
-                // user.save();
-                
+                user.save();
             })
         // })
         res.redirect('/review/index');
