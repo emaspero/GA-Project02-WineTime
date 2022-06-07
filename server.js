@@ -58,12 +58,15 @@ const indexRouter = require('./routes/index');
 const wineRouter = require('./routes/wines');
 const reviewRouter = require('./routes/reviews');
 const authRouter = require('./routes/auth');
+const userRouter = require('./routes/user');
 
 // Mounting routes
 app.use('/', indexRouter);
 app.use('/', wineRouter);
 app.use('/', reviewRouter);
 app.use('/', authRouter);
+app.use('/', userRouter);
+
 
 // Listen to port with callback fxn
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

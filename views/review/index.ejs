@@ -18,7 +18,7 @@
             <td><%= review.rating %></td>
             <td>
                 <% review.user.forEach(function(user){ %>
-                    <%= user.username %>
+                   <a href="/user/detail?id=<%= user._id %>"> <%= user.username %> </a>
                
                <% }) %>
             </td> 
