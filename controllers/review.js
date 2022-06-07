@@ -21,23 +21,24 @@ exports.review_create_get = (req, res) => {
 };
 // POST - Save the data into the database
 exports.review_create_post = (req, res) => {
-    console.log(req.body);
-
     let review = new Review(req.body);
     // let user = req.user
-    console.log(req.user)
-    console.log(review)
+
+
     review.save()
     .then((new_review) => {
         // req.body.wine.forEach(wine => {
             Wine.findById(req.body.wine, (error, wine) => {
-                // console.log(wine)
+                console.log(new_review)
                 wine.review.push(review);
                 new_review.user.push(req.user);
-                // user.new_review.push(review)
+                // user.review.push(review)
+
+
                 new_review.save();
                 wine.save();
                 // user.save();
+                
             })
         // })
         res.redirect('/review/index');
