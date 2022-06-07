@@ -16,5 +16,6 @@ router.use(express.urlencoded({extended: true}));
 const userCtrl = require('../controllers/user');
 
 router.get('/user/detail', userCtrl.user_show_get);
+router.get('/user/profile', userCtrl.profile_show_get);
 
 module.exports = router;
