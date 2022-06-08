@@ -114,7 +114,7 @@ exports.review_update_put = (req, res) => {
 
     Review.findByIdAndUpdate(req.body.id, req.body)
     .then(() => {
-        res.redirect('/review/index');
+        res.redirect('/user/profile');
     })
     .catch((err) => {
         console.log(err);

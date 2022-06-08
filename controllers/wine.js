@@ -41,7 +41,13 @@ exports.wine_index_get = (req, res) => {
 exports.wine_show_get = (req, res) => {
     console.log(req.query.id);
 
-    Wine.findById(req.query.id).populate('review')
+    Wine.findById(req.query.id).populate({ 
+        path: 'review',
+        populate: {
+          path: 'user',
+          model: 'User'
+        } 
+     })
     .then(wine => {
         res.render('wine/detail', {wine, moment});
     })

@@ -28,6 +28,11 @@
 <% user[0].review.forEach(function(review) { %>
     <div> 
         <hr>
+        <div> 
+            <% review.wine.forEach(function(wine) { %>
+            <h4> <%= wine.name %> </h4> 
+            <% }) %>
+        </div>
         <div> Rating: <%= review.rating %>/5</div> 
         <div>
             <%= review.comment %>

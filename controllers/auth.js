@@ -57,3 +57,4 @@ exports.auth_logout_get = (req, res) => {
     req.flash("success", "You have successfully logged out!");
     res.redirect("/auth/signin");
 }
+

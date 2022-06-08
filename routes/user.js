@@ -17,5 +17,7 @@ const userCtrl = require('../controllers/user');
 
 router.get('/user/detail', userCtrl.user_show_get);
 router.get('/user/profile', userCtrl.profile_show_get);
+router.get('/user/edit', userCtrl.profile_edit_get);
+router.put('/user/update', userCtrl.profile_update_put);
 
 module.exports = router;

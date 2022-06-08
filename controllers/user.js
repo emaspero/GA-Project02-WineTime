@@ -31,7 +31,14 @@ exports.user_show_get = (req, res) => {
 
 // GET - show current user private profile info
 exports.profile_show_get = (req, res) => {
-    User.find(req.user).populate('review') //.find always returns an array or findbyid(req.user._id)
+    User.find(req.user).populate({ 
+        path: 'review',
+        populate: {
+          path: 'wine',
+          model: 'Wine'
+        } 
+     })
+      //.find always returns an array or findbyid(req.user._id)
     .then((user) => {
         console.log(req.user)
         console.log(user)
@@ -40,5 +47,28 @@ exports.profile_show_get = (req, res) => {
     })
     .catch((err) => {
         console.log(err);
+    })
+}
+
+// HTTP GET to load the edit form
+exports.profile_edit_get = (req, res) => {
+    User.findById(req.query.id)
+    .then((profile) => {
+        res.render('user/edit', {profile})
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
+
+// HTTP PUT to update profile
+exports.profile_update_put = (req, res) => {
+    console.log(req.body.id)
+    User.findByIdAndUpdate(req.body.id, req.body)
+    .then(() => {
+        res.redirect('/user/profile')
+    })
+    .catch((err) => {
+        console.log(err)
     })
 }
