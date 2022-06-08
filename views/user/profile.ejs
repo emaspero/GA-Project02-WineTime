@@ -1,5 +1,5 @@
 <h1>Profile</h1>
-
+<a href="/user/edit?id=<%= currentUser._id %>"> Edit Profile </a>
 <table>
     <tr>
         <td>First Name:</td>
@@ -19,7 +19,7 @@
     </tr>
     <tr>
         <td>Password:</td>
-        <td> <%= currentUser.password %> </td>
+        <td> <a href="/user/editPassword?id=<%= currentUser._id %>"> Change Password </a> </td>
     </tr>
 </table>
 
@@ -27,11 +27,13 @@
 
 <% user[0].review.forEach(function(review) { %>
     <div> 
-
+        <hr>
         <div> Rating: <%= review.rating %>/5</div> 
         <div>
             <%= review.comment %>
         </div> 
+        <div> <a href="/review/edit?id=<%= review._id %>"> Edit Review </a></div> 
+        <div> <a href="/review/delete?id=<%= review._id %>"> Delete Review </a> </div> 
     </div>
     <% }) %>
 
