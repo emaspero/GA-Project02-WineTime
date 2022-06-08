@@ -19,5 +19,7 @@ router.get('/user/detail', userCtrl.user_show_get);
 router.get('/user/profile', userCtrl.profile_show_get);
 router.get('/user/edit', userCtrl.profile_edit_get);
 router.put('/user/update', userCtrl.profile_update_put);
+router.get('/user/editPassword', userCtrl.password_edit_get);
+router.put('/user/updatePassword', userCtrl.password_update_put);
 
 module.exports = router;

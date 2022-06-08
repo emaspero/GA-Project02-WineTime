@@ -11,6 +11,8 @@ const {Wine} = require('../models/Wine');
 
 // Require moment
 const moment = require('moment');
+// Require bcrypt
+const bcrypt = require('bcrypt');
 
 // Use HTTP GET to show user public profile page
 exports.user_show_get = (req, res) => {
@@ -71,4 +73,39 @@ exports.profile_update_put = (req, res) => {
     .catch((err) => {
         console.log(err)
     })
+}
+
+// HTTP GET to load the change password page
+exports.password_edit_get = (req, res) => {
+    User.findById(req.query.id)
+    .then((password) => {
+        res.render('user/editPassword', {password})
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
+
+// HTTP PUT to compare current passwords and update with new password 
+exports.password_update_put = (req, res) => {
+    let user = User(req.user)
+    console.log(user)
+    console.log(user.password)
+    console.log(req.body.password)
+    let dbPassword = user.password 
+    let enteredPassword = req.body.password
+    // const comparePassword = (pw, hash) => {
+        var comp = bcrypt.compareSync(enteredPassword, dbPassword)
+        // return comp
+        if (comp) {
+            User.findByIdAndUpdate(req.body.id, req.body.newPassword)
+            .then(() => {
+                res.redirect('/user/profile');
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        }
+    // }
+//    comparePassword(dbPassword, enteredPassword)
 }
