@@ -88,18 +88,21 @@ exports.password_edit_get = (req, res) => {
 
 // HTTP PUT to compare current passwords and update with new password 
 exports.password_update_put = (req, res) => {
-    let user = User(req.user)
-    console.log(user)
-    console.log(user.password)
-    console.log(req.body.password)
+    // console.log(req.user)
+    let user = req.user  
+    // console.log(user.password)
+    // console.log(req.body.password)
     let dbPassword = user.password 
     let enteredPassword = req.body.password
     // const comparePassword = (pw, hash) => {
         var comp = bcrypt.compareSync(enteredPassword, dbPassword)
-        // return comp
+        // console.log(comp)
         if (comp) {
-            User.findByIdAndUpdate(req.body.id, req.body.newPassword)
+            req.body.password = req.body.newPassword
+            console.log(req.body.id)
+            User.findByIdAndUpdate(req.body.id, req.body.password)
             .then(() => {
+                console.log(`after then ${req.body.password}`)
                 res.redirect('/user/profile');
             })
             .catch((err) => {

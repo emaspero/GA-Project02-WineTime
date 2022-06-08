@@ -1,4 +1,33 @@
 <h1>Reviews</h1>
+
+<div class="container">
+    <% reviews.forEach(function(review) { %>
+    <div class="review">
+        <div class="topline"> 
+            <div class="toplineleft">
+                <% review.wine.forEach(function(wine) { %>
+                    <div> <h4> <a href="/wine/detail?id=<%=wine._id%>">  <%= wine.name %> </a> </h4> </div>
+                    <% }) %>
+                    <div> Rating: <%= review.rating %>/5 </div> 
+            </div>
+             
+            <% review.user.forEach(function(user){ %>
+            <div> <a href="/user/detail?id=<%= user._id %>"> <%= user.username %> </a> </div>
+            <% }) %>
+        </div>
+        <div>
+            <div> <%= review.comment %> </div>
+        </div> 
+
+    </div>
+    <% }) %>
+</div>
+
+
+
+
+
+
 <table>
     <tr>
         <th>Wine</th>

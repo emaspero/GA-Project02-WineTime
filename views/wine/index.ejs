@@ -1,5 +1,28 @@
 <h1>Wines</h1>
 
+<div class="winecontainer">
+    <% wines.forEach(function(wine) { %>
+       <div class="wines">
+        <div class="winedetails"> 
+            <div><h4> <a href="/wine/detail?id=<%= wine._id %>"><%= wine.name %></a></h4> </div>
+            <div> Grape:  <%= wine.grape %> </div>
+            <div> Region:  <%= wine.region%> </div>
+            <div> Country: <%= wine.country %> </div>
+        </div>
+        <div class="updated">
+            Last Updated: <%= moment(wine.updatedAt).fromNow() %>
+        </div>
+       </div> 
+
+    <% }) %>
+</div>
+
+
+
+
+
+
+
 <table>
     <tr>
         <th>Name</th>
