@@ -1,22 +1,22 @@
 <h1>Add Review</h1>
 
 <form method="POST" action="/review/add">
-    <div>
+    <div class="form-group">
         <label>Wine:</label>
-        <select name="wine">
+        <select name="wine" class="form-control">
             <% wines.forEach(function(wine) { %>
                 <option value="<%=wine._id%>"><%= wine.name %></option>
            <% }) %>
         </select>
     </div>
-    <div>
+    <div class="form-group">
         <label>Review:</label>
-        <textarea name="comment"></textarea>    
+        <textarea name="comment" class="form-control"></textarea>    
     </div>
-    <div>
+    <div class="form-group">
         <label>Rating:</label>
-        <input type="number" min="1" max="5" name="rating" placeholder="1 - 5">
+        <input type="number" min="1" max="5" name="rating" class="form-control">
     </div>
 
-    <button type="submit">Add Review</button>
+    <button type="submit" class="btn btn-primary">Add Review</button>
 </form>

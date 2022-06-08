@@ -1,27 +1,29 @@
 <h1>Add Wine</h1>
 
 <form method="POST" action="/wine/add">
-    <div>
+    <div class="form-group">
         <label>Name:</label>
-        <input type="text" name="name" />
+        <input type="text" name="name" class="form-control"/>
     </div>
 
-    <div>
+    <div class="form-group">
         <label>Grape:</label>
-        <input type="text" name="grape" />
+        <input type="text" name="grape" class="form-control" />
     </div>
 
-    <div>
+    <div class="form-group">
+        <div >
         <label>Region:</label>
-        <input type="text" name="region" />
+        <input type="text" name="region" class="form-control"/>
     </div>
 
-    <div>
+    <div class="form-group">
+        <div >
         <label>Country:</label>
-        <input type="text" name="country" />
+        <input type="text" name="country" class="form-control"/>
     </div>
 
     <br>
 
-    <button type="submit">Add Wine</button>
+    <button type="submit" class="btn btn-primary">Add Wine</button>
 </form>
