@@ -6,7 +6,14 @@ const reviewSchema = mongoose.Schema({
         ref: "User"
     }],
     comment: String,
-    rating: Number,
+    rating: {
+        type: Number,
+        min: [1, "Rating must be between 1 and 5"],
+        max: [5, "Rating must be between 1 and 5"],
+        validate: {
+            validator: Number.isInteger
+        }
+    },
     wine: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Wine'

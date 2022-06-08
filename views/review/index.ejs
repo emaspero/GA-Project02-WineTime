@@ -11,7 +11,7 @@
         <tr>
             <td>
                 <% review.wine.forEach(function(wine) { %>
-                    <%= wine.name %>
+                    <a href="/wine/detail?id=<%=wine._id%>">  <%= wine.name %> </a>             
                 <% }) %>
             </td>
             <td><%= review.comment %></td>
