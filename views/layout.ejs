@@ -25,23 +25,22 @@
         <% if (currentUser) { %>
             
             <div class="iconlinks"> 
-                <i class="fa-solid fa-wine-bottle"></i> <a href="/wine/index"> Wines </a> 
-                <i class="fa-solid fa-wine-glass"></i> <a href="/review/index"> Reviews </a>
+                <i class="fa-solid fa-wine-bottle"></i> <a href="/wine/index" class="navlink"> Wines </a> 
+                <i class="fa-solid fa-wine-glass"></i> <a href="/review/index" class="navlink"> Reviews </a>
             </div>
             <div>
-                Hi! <%= currentUser.firstName %>
-                <a href="/user/profile">Profile</a>
-                <a href="/auth/logout"> Log Out </a> </div>
+                <a href="/user/profile" class="navlink">Profile</a>
+                <a href="/auth/logout" class="navlink"> Log Out </a> </div>
         
       
             <% } else { %>
                 <div class="iconlinks">
-                    <i class="fa-solid fa-wine-bottle"></i> <a href="/wine/index"> Wines </a> 
-                    <i class="fa-solid fa-wine-glass"></i> <a href="/review/index"> Reviews </a>
+                    <i class="fa-solid fa-wine-bottle"></i> <a href="/wine/index" class="navlink"> Wines </a> 
+                    <i class="fa-solid fa-wine-glass"></i> <a href="/review/index" class="navlink"> Reviews </a>
                 </div>
                <div>
-                <a href="/auth/signup"> Sign Up </a>
-                <a href="/auth/signin"> Log In </a>
+                <a href="/auth/signup" class="navlink"> Sign Up </a>
+                <a href="/auth/signin" class="navlink"> Log In </a>
                </div>
                 
         <% } %>
@@ -51,8 +50,14 @@
 
         <br>
         <div class="add"> 
-            <a href="/wine/add" class="btn btn-outline-primary"> Add Wine </a>
-            <a href="/review/add" class="btn btn-outline-primary"> Add Review </a>
+            <div>
+                Welcome to WineTime, <%= currentUser.firstName %>!
+            </div>
+            <div>
+                <a href="/wine/add" class="btn btn-outline-primary"> Add Wine </a>
+                <a href="/review/add" class="btn btn-outline-primary"> Add Review </a>
+            </div>
+
         </div> 
 
         <% } %>
@@ -64,7 +69,7 @@
 
     <br><br><br><br><hr><br>
         <footer>
-            <a href="https://git.generalassemb.ly/ailishmcl"> Git Hub </a>
+
         </footer>
         
   

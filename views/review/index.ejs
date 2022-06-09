@@ -1,57 +1,27 @@
-<h1>Reviews</h1>
+<div>
+    <h1>Reviews</h1>
 
-<div class="container">
-    <% reviews.forEach(function(review) { %>
-    <div class="review">
-        <div class="topline"> 
-            <div class="toplineleft">
-                <% review.wine.forEach(function(wine) { %>
-                    <div> <h4> <a href="/wine/detail?id=<%=wine._id%>">  <%= wine.name %> </a> </h4> </div>
+        <% reviews.forEach(function(review) { %>
+        <div class="index">
+            <div class="topline"> 
+                    <% review.wine.forEach(function(wine) { %>
+                        <div> <h4> <a href="/wine/detail?id=<%=wine._id%>" class="navlink">  <%= wine.name %> </a> </h4> </div>
+                        <% }) %>
+                        <div> Rating: <%= review.rating %>/5 </div> 
+            </div> 
+            <div class="main">
+                <% review.user.forEach(function(user){ %>
+                    <div> <a href="/user/detail?id=<%= user._id %>" class="navlink"> <%= user.username %> </a> </div>
                     <% }) %>
-                    <div> Rating: <%= review.rating %>/5 </div> 
-            </div>
-             
-            <% review.user.forEach(function(user){ %>
-            <div> <a href="/user/detail?id=<%= user._id %>"> <%= user.username %> </a> </div>
-            <% }) %>
+                    <div> <%= review.comment %> </div>
+            </div>    
+                
+    
         </div>
-        <div>
-            <div> <%= review.comment %> </div>
-        </div> 
-
-    </div>
-    <% }) %>
+        <% }) %>
+    
+    
 </div>
 
 
 
-
-
-
-<table>
-    <tr>
-        <th>Wine</th>
-        <th>Comment</th>
-        <th>Rating</th>
-        <th>Username</th>
-    </tr>
-
-    <% reviews.forEach(function(review) { %>
-        <tr>
-            <td>
-                <% review.wine.forEach(function(wine) { %>
-                    <a href="/wine/detail?id=<%=wine._id%>">  <%= wine.name %> </a>             
-                <% }) %>
-            </td>
-            <td><%= review.comment %></td>
-            <td><%= review.rating %></td>
-            <td>
-                <% review.user.forEach(function(user){ %>
-                   <a href="/user/detail?id=<%= user._id %>"> <%= user.username %> </a>
-               
-               <% }) %>
-            </td> 
-            
-        </tr>
-    <% }) %>
-</table>

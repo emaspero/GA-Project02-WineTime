@@ -5,7 +5,7 @@ $('.btn').hover(
         $(this).css({"background-color": "#f1f0f0", "color": "#a02222"})
     }
 )
-$('a').hover(
+$('.navlink').hover(
     function() {
         $(this).css({"text-decoration": "underline", "color": "#a02222"})
     }, function() {

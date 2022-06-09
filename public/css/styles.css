@@ -17,7 +17,8 @@ nav {
 }
 .add {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .container {
     display: flex;
@@ -25,28 +26,32 @@ nav {
     flex-direction: column;
 
 }
-.review {
+.index {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    /* margin: 10px; */
     background-color: white;
 }
-.review div {
+/* .index div {
     padding: 5px 5px;
-}
+} */
 .topline {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.toplineleft {
-    display: flex;
-    flex-direction: row;
-}
-.winecontainer {
+.main {
     display: flex;
     flex-direction: column;
 }
+/* .toplineleft {
+    display: flex;
+    flex-direction: row;
+} */
+/* .winecontainer {
+    display: flex;
+    flex-direction: column;
+} */
 .wines {
     display: flex;
     flex-direction: row;
@@ -95,11 +100,14 @@ button {
     border-color: #a02222;
     background-color: #f1f0f0;
 }
-.forms {
+.formpage {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
     align-items: center;
+}
+.forms {
+
 }
 #confused {
     background-image: url("https://images.unsplash.com/photo-1536584319933-9475ec694522?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");

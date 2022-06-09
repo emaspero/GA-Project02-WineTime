@@ -1,19 +1,36 @@
-<h3><%= wine.name %></h3>
+<div>
+    <div class="index">
+        <div class="topline"> 
+            <h3><%= wine.name %></h3>
+        </div>
+        <div class="main">
+            <div>Grape: <%= wine.grape %></div>
+            <div>Region: <%= wine.region %></div>
+            <div>Country: <%= wine.country %></div>
+        </div>
 
-<div>Grape: <%= wine.grape %></div>
-<div>Region: <%= wine.region %></div>
-<div>Country: <%= wine.country %></div>
+    </div>
+    
 
-<div> 
-
-    <% wine.review.forEach(function(review) { %>
-       <hr>
-       <%  review.user.forEach(function(user){ %>
-
-       <div> Review by: <%= user.username %> </div> 
-       <%  })%>
-        <div> Rating: <%= review.rating %> </div>
-        <div> <%= review.comment %> </div>
-    <% }) %>
-
+    
+    
+    <div class="index"> 
+    
+        <% wine.review.forEach(function(review) { %>
+           <hr>
+           <%  review.user.forEach(function(user){ %>
+            <div class="topline">
+                <div> Review by: <%= user.username %> </div> 
+                <%  })%>
+                <div> Rating: <%= review.rating %> </div>
+            </div>
+           
+           <div class="main">
+                <div> <%= review.comment %> </div>
+           </div>
+            
+        <% }) %>
+    
+    </div>
 </div>
+

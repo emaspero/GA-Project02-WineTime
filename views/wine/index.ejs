@@ -1,51 +1,26 @@
-<h1>Wines</h1>
+<div>
+    <h1>Wines</h1>
 
-<div class="winecontainer">
-    <% wines.forEach(function(wine) { %>
-       <div class="wines">
-        <div class="winedetails"> 
-            <div><h4> <a href="/wine/detail?id=<%= wine._id %>"><%= wine.name %></a></h4> </div>
-            <div> Grape:  <%= wine.grape %> </div>
-            <div> Region:  <%= wine.region%> </div>
-            <div> Country: <%= wine.country %> </div>
-        </div>
-        <div class="updated">
-            Last Updated: <%= moment(wine.updatedAt).fromNow() %>
-        </div>
-       </div> 
+    
+        <% wines.forEach(function(wine) { %>
+           <div class="index">
 
-    <% }) %>
+                <div class="topline"> 
+                    <div><h4> <a href="/wine/detail?id=<%= wine._id %>" class="navlink"><%= wine.name %></a></h4> </div>
+                    <div> Last Updated: <%= moment(wine.updatedAt).fromNow() %> </div>
+                </div>
+
+                <div class="main">
+                    <div> Grape:  <%= wine.grape %> </div>
+                    <div> Region:  <%= wine.region%> </div>
+                    <div> Country: <%= wine.country %> </div>
+                </div>
+
+           </div> 
+    
+        <% }) %>
+    
 </div>
 
 
 
-
-
-
-
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Grape</th>
-        <th>Region</th>
-        <th>Country</th>
-        <th> Created At </th>
-        <th> Updated At </th>
-        <th>Edit</th>
-    </tr>
-
-    <% wines.forEach(function(wine) { %>
-    
-        <tr>
-            <td><a href="/wine/detail?id=<%= wine._id %>"><%= wine.name %></a></td>
-            <td><%= wine.grape %></td>
-            <td><%= wine.region %></td>
-            <td><%= wine.country %></td>
-            <td><%= moment(wine.createdAt).fromNow() %></td>
-            <td><%= moment(wine.updatedAt).fromNow() %></td>
-            <td><a href="/wine/edit?id=<%= wine._id %>">Edit</a></td>
-        </tr>
-
-    <% }) %>
-
-</table>
