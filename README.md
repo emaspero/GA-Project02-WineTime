@@ -53,6 +53,7 @@ Together we did set up the outstanding relevant pages (public and private User p
 The main focus for this last day was to debug and implement the function which allows the User to change its own password (while keeping that encrypted on the database) and to improve the styling of our application using a mixture of Bootstrap, CSS and JS.
 On this day the database was also moved from local to remote and the app was deployed on Heroku.
 
+
 ### Deployed application link
 (Heroku App)[https://wineappsei64.herokuapp.com/]
 
