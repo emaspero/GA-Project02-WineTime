@@ -13,6 +13,7 @@ const {Wine} = require('../models/Wine');
 const moment = require('moment');
 // Require bcrypt
 const bcrypt = require('bcrypt');
+const salt = 10;
 
 // Use HTTP GET to show user public profile page
 exports.user_show_get = (req, res) => {
@@ -98,9 +99,11 @@ exports.password_update_put = (req, res) => {
         var comp = bcrypt.compareSync(enteredPassword, dbPassword)
         // console.log(comp)
         if (comp) {
-            req.body.password = req.body.newPassword
+            let hashedPassword = bcrypt.hashSync(req.body.newPassword, salt);
+            req.body.password = hashedPassword
             console.log(req.body.id)
-            User.findByIdAndUpdate(req.body.id, req.body.password)
+            User.findByIdAndUpdate(req.body.id, req.body)
+            // req.body.password.save()
             .then(() => {
                 console.log(`after then ${req.body.password}`)
                 res.redirect('/user/profile');

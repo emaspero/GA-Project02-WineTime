@@ -30,7 +30,7 @@ nav {
     background-color: white;
 }
 .review div {
-    padding: 10px;
+    padding: 5px 5px;
 }
 .topline {
     display: flex;
@@ -56,4 +56,28 @@ nav {
 form {
     height: 300px;
     width: 300px;
+}
+#test {
+    background-color: aquamarine;
+    padding: 10px;
+}
+h5 {
+    background-color: crimson;
+}
+.topline {
+    background-color: darksalmon;
+}
+.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.profile-review {
+    width: 50%;
+}
+.title {
+    padding: 5px;
+}
+.btn {
+    margin: 5px;
 }
