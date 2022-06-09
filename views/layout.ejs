@@ -7,12 +7,16 @@
     <title>WineTime</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0b67725e2d.js" crossorigin="anonymous"></script>
 </head>
 <body>
    <div id="logo">
        <!-- Will swap this out for logo -->
-    <h1> <a href="/" class="noStyle"> WineTime </a></h1>
+       
+   <a href="/" class="noStyle"> <img src="../images/logocropped.png" alt="winetime logo"> </a>
     <h4> It's wine o'clock somewhere! </h4>
+
    </div>
    
     <nav>
@@ -20,9 +24,9 @@
         <!-- Log out only appears when a current user -->
         <% if (currentUser) { %>
             
-            <div> 
-                <a href="/wine/index"> Wines </a>
-                <a href="/review/index"> Reviews </a>
+            <div class="iconlinks"> 
+                <i class="fa-solid fa-wine-bottle"></i> <a href="/wine/index"> Wines </a> 
+                <i class="fa-solid fa-wine-glass"></i> <a href="/review/index"> Reviews </a>
             </div>
             <div>
                 Hi! <%= currentUser.firstName %>
@@ -31,9 +35,9 @@
         
       
             <% } else { %>
-                <div>
-                    <a href="/wine/index"> Wines </a>
-                    <a href="/review/index"> Reviews </a>
+                <div class="iconlinks">
+                    <i class="fa-solid fa-wine-bottle"></i> <a href="/wine/index"> Wines </a> 
+                    <i class="fa-solid fa-wine-glass"></i> <a href="/review/index"> Reviews </a>
                 </div>
                <div>
                 <a href="/auth/signup"> Sign Up </a>
