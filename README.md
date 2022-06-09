@@ -53,10 +53,14 @@ Together we did set up the outstanding relevant pages (public and private User p
 The main focus for this last day was to debug and implement the function which allows the User to change its own password (while keeping that encrypted on the database) and to improve the styling of our application using a mixture of Bootstrap, CSS and JS.
 On this day the database was also moved from local to remote and the app was deployed on Heroku.
 
+
+### Deployed application link
+(Heroku App)[https://wineappsei64.herokuapp.com/]
+
 ### Challenges
 As this was our first full-stack application project, the biggest challenge was the crucial role played by the precision that revolves around back-end coding. For e.g. while working on the "change password" feature, our code would work without giving us any errors, but the new password was not being sent to the database because we typed "req.body.password" instead of "req.body" in the related API. We also ended up spending a remarkable amount of time debugging our code on a daily basis. 
 
-### Featured to be added in the future
+### Features to be added in the future
 - Users can upload pictures with reviews and wines and add their own profile picture
 - Different levels of authorizations (e.g. only admin-users can add new wines)
 - Users can select and save favorite users-profiles in a list
