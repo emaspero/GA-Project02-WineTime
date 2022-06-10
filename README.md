@@ -65,3 +65,4 @@ As this was our first full-stack application project, the biggest challenge was 
 - Different levels of authorizations (e.g. only admin-users can add new wines)
 - Users can select and save favorite users-profiles in a list
 - Have a feed on the homepage showing recent activities (e.g. recently added reviews/vines)
+- Star rating system and average wine-rating to display on the page based on the amount of reviews-ratings.
