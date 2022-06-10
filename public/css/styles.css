@@ -20,17 +20,30 @@ nav {
     align-items: center;
     flex-direction: column;
 }
+.add div {
+    margin: 5px 0;
+}
+.signinmessage {
+    font-size: 24px;
+}
 .container {
     display: flex;
     justify-content: center;
     flex-direction: column;
 
 }
+.feedpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .index {
     display: flex;
     flex-direction: column;
-    /* margin: 10px; */
-    background-color: white;
+    margin: 10px;
+    background-color: #ccc7c732;
+    width: 55%;
+    border: solid 1px #99949432;
 }
 /* .index div {
     padding: 5px 5px;
@@ -39,10 +52,14 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px #99949432;
+    padding: 3px 10px 0 10px;
 }
 .main {
     display: flex;
     flex-direction: column;
+    padding: 3px 10px 0 10px;
 }
 /* .toplineleft {
     display: flex;
@@ -52,14 +69,12 @@ nav {
     display: flex;
     flex-direction: column;
 } */
-.wines {
+/* .wines {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-.winedetails {
-    padding: 10px;
-}
+} */
+
 form {
     height: 300px;
     width: 300px;
@@ -68,16 +83,24 @@ form {
     background-color: aquamarine;
     padding: 10px;
 }
-.topline {
-    background-color: darksalmon;
-}
 .profile {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-top: 20px;
+}
+.profile-index {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background-color: #ccc7c732;
+    border: solid 1px #99949432;
 }
 .profile-review {
-    width: 50%;
+    width: 600px;
+}
+.profile-info {
+    width: 600px;
 }
 .title {
     padding: 5px;
@@ -90,8 +113,8 @@ form {
 a {
     text-decoration: none;
     color: #a02222;
-    margin: 5px;
 }
+
 .iconlinks a {
     margin-left: 0;
 }
@@ -111,11 +134,12 @@ button {
 }
 #confused {
     background-image: url("https://images.unsplash.com/photo-1536584319933-9475ec694522?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
-    background-color: mediumslateblue;
+    background-color: #a02222;
     background-size: 100% 100%;
     width: 100%;
     height: 1000px;
     background-repeat: no-repeat;
+    margin-top: 10px;
 }
 #confused h5 {
     color: #f1f0f0;

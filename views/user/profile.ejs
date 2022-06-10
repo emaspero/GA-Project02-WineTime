@@ -28,33 +28,32 @@
 
 
     <div class="profile-review">
-        <h2 class="title">Your Reviews:</h2>
-
+        <h2 class="title">Your Reviews</h2>
+        <hr>
         <% user[0].review.forEach(function(review) { %>
-            <hr>
-            <div class="review"> 
+           
+        <div class="profile-index"> 
                 
                 <div class="topline"> 
-                    <div class="topline-left">
+                    
                     <% review.wine.forEach(function(wine) { %>
-                    <h4> <%= wine.name %> </h4> 
+                    <div> <h4> <%= wine.name %> </h4>  </div>
                     <% }) %>
-                     Rating: <%= review.rating %>/5
-                    </div> 
+                     
                     <div> 
                         <a href="/review/edit?id=<%= review._id %>" class="btn btn-outline-primary"> Edit Review </a> 
                         <a href="/review/delete?id=<%= review._id %>" class="btn btn-outline-primary"> Delete Review </a> 
                     </div> 
                 </div>
                 
-                <div>
-                    <%= review.comment %>
+                <div class="main">
+                    <div> Rating: <%= review.rating %>/5 </div>
+                    <div> <%= review.comment %> </div>
+                    
                 </div> 
     
-               
-    
-            </div>
-        <% }) %>
+            <% }) %>
+        </div>
     </div>
 </div>
 

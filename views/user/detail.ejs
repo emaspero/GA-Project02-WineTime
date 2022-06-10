@@ -1,4 +1,5 @@
-<div>
+<div class="feedpage">
+    <hr>
     <div>
         <h3> <%= user.username %></h3>
     </div>
@@ -8,15 +9,15 @@
     <br>
     <h4> Reviews added by <%= user.username %> </h4>
     <% user.review.forEach(function(review) { %>
-        <div class="review"> 
+        <div class="index"> 
             <div class="topline"> 
                 <% review.wine.forEach(function(wine) { %>
-                    <div> <h5> <%= wine.name %> </h5> </div>
+                    <div><h4> <a href="/wine/detail?id=<%= wine._id %>" class="navlink"><%= wine.name %></a></h4> </div>
                     <% }) %>
                     <div> Rating: <%= review.rating %>/5</div> 
             </div>
             
-            <div id="test">
+            <div class="main">
                 <%= review.comment %>
             </div> 
         </div>
